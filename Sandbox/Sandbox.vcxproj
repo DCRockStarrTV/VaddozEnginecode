@@ -137,6 +137,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Sandbox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\VaddozEngine\VaddozEngine.vcxproj">
       <Project>{A3AA0230-8F0D-92D4-3893-CA8A24D55D57}</Project>
     </ProjectReference>

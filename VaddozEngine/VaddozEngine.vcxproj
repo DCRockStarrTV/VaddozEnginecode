@@ -14,9 +14,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Engine\core.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3AA0230-8F0D-92D4-3893-CA8A24D55D57}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
@@ -95,7 +92,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -120,7 +117,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -145,9 +142,18 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll .. \bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\VaddozEngine\VaddozEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine\Applications.h" />
+    <ClInclude Include="src\Engine\EntryPoint.h" />
+    <ClInclude Include="src\Engine\core.h" />
+    <ClInclude Include="src\Vaddoz.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engine\Applications.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
