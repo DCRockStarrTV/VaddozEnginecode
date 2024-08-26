@@ -56,7 +56,7 @@ project "VaddozEngine"
 
 project "Sandbox"
     location "Sandbox"
-    kind "SharedLib"
+    kind "ConsoleApp"
     language "C++"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")

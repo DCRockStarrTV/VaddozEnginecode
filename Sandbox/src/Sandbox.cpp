@@ -12,6 +12,6 @@ public:
 	}
 };
 
-Vaddoz::Applications* CreateApplication() {
+Vaddoz::Applications* Vaddoz::CreateApplication() {
 	return new Sandbox();
 }
